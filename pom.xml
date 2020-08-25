@@ -14,8 +14,8 @@
     <dependencies>
         <dependency>
             <groupId>com.demo</groupId>
-            <artifactId>demo-sdk</artifactId>
-            <version>${demo-sdk.module.version}</version>
+            <artifactId>demo-api-sdk</artifactId>
+            <version>${sdk.module.version}</version>
         </dependency>
 
         <!--热部署-->
