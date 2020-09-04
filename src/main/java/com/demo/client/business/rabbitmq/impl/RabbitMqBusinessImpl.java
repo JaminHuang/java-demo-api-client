@@ -5,6 +5,7 @@ import com.demo.client.business.rabbitmq.RabbitMqBusiness;
 import com.demo.client.consts.MessageRoute;
 import com.demo.sdk.mq.Message;
 import com.demo.sdk.mq.MessageProducer;
+import org.springframework.stereotype.Component;
 
 /**
  * RabbitMQ消息中心
@@ -12,6 +13,7 @@ import com.demo.sdk.mq.MessageProducer;
  * @author jamin
  * @date 2020/9/4
  */
+@Component
 public class RabbitMqBusinessImpl implements RabbitMqBusiness {
 
     /**
