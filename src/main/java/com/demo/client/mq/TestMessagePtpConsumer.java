@@ -8,7 +8,7 @@ import com.demo.sdk.mq.PtpConsumer;
 import com.demo.sdk.util.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * 测试RabbitMQ消息
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
  * @author jamin
  * @date 2020/9/4
  */
-@Component
+//@Service
 public class TestMessagePtpConsumer extends PtpConsumer<JSONObject> {
 
     private static final Logger logger = LoggerFactory.getLogger(TestMessagePtpConsumer.class);

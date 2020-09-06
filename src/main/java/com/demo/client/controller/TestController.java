@@ -34,5 +34,22 @@ public class TestController extends BaseController {
         return Result.success();
     }
 
+    /**
+     * 测试存储redis-save
+     */
+    @GetMapping("/redis/save")
+    @AccessToken(required = false)
+    public Result<Object> redisSave() {
+        testBusiness.testRedisSave(2);
+        return Result.success();
+    }
 
+    /**
+     * 测试存储redis-get
+     */
+    @GetMapping("/redis/get")
+    @AccessToken(required = false)
+    public Result<UserVO> redisGet() {
+        return Result.success(testBusiness.testRedisGet(2));
+    }
 }

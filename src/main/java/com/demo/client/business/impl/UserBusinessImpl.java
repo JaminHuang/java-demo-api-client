@@ -7,7 +7,7 @@ import com.demo.core.user.common.service.UserService;
 import com.demo.rpc.annotation.RemoteResource;
 import com.demo.sdk.exception.BizException;
 import com.demo.sdk.util.ModelConvertUtils;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
@@ -17,7 +17,7 @@ import java.util.Optional;
  * @author jamin
  * @date 2020/8/11
  */
-@Component
+@Service
 public class UserBusinessImpl implements UserBusiness {
 
     @RemoteResource
