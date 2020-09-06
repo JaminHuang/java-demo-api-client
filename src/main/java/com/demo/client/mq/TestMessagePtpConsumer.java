@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @author jamin
  * @date 2020/9/4
  */
-//@Service
+@Service
 public class TestMessagePtpConsumer extends PtpConsumer<JSONObject> {
 
     private static final Logger logger = LoggerFactory.getLogger(TestMessagePtpConsumer.class);
