@@ -18,7 +18,7 @@ public class RabbitMQRevTest {
 
         factory.setHost("103.40.29.133");
         factory.setUsername("admin");
-        factory.setPassword("admin");
+        factory.setPassword("i4S5ESRQauYL1rrH");
         factory.setVirtualHost("/");
         factory.setPort(5672);
         Connection connection = factory.newConnection();
