@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>demo-client</artifactId>
-    <version>${api.module.version}</version>
+    <version>${client.module.version}</version>
 
     <dependencies>
         <dependency>
