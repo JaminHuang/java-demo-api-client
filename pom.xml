@@ -8,7 +8,7 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>demo-client</artifactId>
+    <artifactId>demo-api-client</artifactId>
     <version>${client.module.version}</version>
 
     <dependencies>
