@@ -1,7 +1,7 @@
 package com.demo.client;
 
 import com.demo.sdk.annotation.EnableFilters;
-import com.demo.sdk.util.ContextUtils;
+import com.demo.sdk.apollo.EnableMyConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -16,13 +16,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableEurekaClient
 @EnableTransactionManagement
 @SpringBootApplication
+@EnableMyConfig
 @EnableFilters
 @ComponentScan(basePackages = {"com.demo"})
 public class App {
-
     public static void main(String[] args) {
         SpringApplication.run(App.class, args);
-        System.out.println(ContextUtils.getApplicationName());
     }
 
 }

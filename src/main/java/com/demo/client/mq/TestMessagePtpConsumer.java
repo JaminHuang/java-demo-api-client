@@ -10,12 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-/**
- * 测试RabbitMQ消息
- *
- * @author jamin
- * @date 2020/9/4
- */
 @Service
 public class TestMessagePtpConsumer extends PtpConsumer<JSONObject> {
 
@@ -34,15 +28,14 @@ public class TestMessagePtpConsumer extends PtpConsumer<JSONObject> {
             return ConsumeStatus.SUCCESS;
         }
 
-        Integer userId = data.getInteger("userId");
-
         try {
-            System.out.println("测试消息, 消费者消费成功……");
+            Integer userId = data.getInteger("userId");
+
+            logger.info("[userId] = {}", userId);
         }
         catch (Exception ex) {
             logger.error("测试消息, 消费异常, 参数[data] = {}, [message] = {}", data, ExceptionUtils.getExceptionMsg(ex));
         }
-
 
         return ConsumeStatus.SUCCESS;
     }

@@ -1,12 +1,15 @@
 package com.demo.client.business.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.demo.client.business.TestBusiness;
-import com.demo.client.business.rabbitmq.RabbitMqBusiness;
+import com.demo.client.consts.MessageRoute;
 import com.demo.client.consts.RedisKeyEnum;
 import com.demo.client.vo.UserVO;
 import com.demo.core.user.common.po.User;
 import com.demo.core.user.common.service.UserService;
 import com.demo.rpc.annotation.RemoteResource;
+import com.demo.sdk.mq.Message;
+import com.demo.sdk.mq.MessageProducer;
 import com.demo.sdk.util.ModelConvertUtils;
 import com.demo.sdk.util.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +31,6 @@ public class TestBusinessImpl implements TestBusiness {
     private UserService userService;
 
     @Autowired
-    private RabbitMqBusiness rabbitMqBusiness;
-
-    @Autowired
     private RedisUtils redisUtils;
 
     /**
@@ -39,7 +39,10 @@ public class TestBusinessImpl implements TestBusiness {
      */
     @Override
     public void testRabbitMQ(Integer userId) {
-        rabbitMqBusiness.test(userId);
+        JSONObject data = new JSONObject();
+        data.put("userId", userId);
+        Message<JSONObject> message = new Message<>(MessageRoute.TEST_MESSAGE, data);
+        MessageProducer.ptp(message);
     }
 
     /**
