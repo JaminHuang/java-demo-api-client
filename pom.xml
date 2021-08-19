@@ -25,4 +25,21 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <!-- 将资源文件打包到classpath -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <targetPath>BOOT-INF/classes/</targetPath>
+            </resource>
+        </resources>
+        <!-- java命令启动 jar包 -->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
